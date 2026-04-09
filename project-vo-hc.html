@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed project page for Muhammad Noman Ashraf's VO-HC research, covering Hopf-oscillator-based harmonic compensation, weak-grid testing, THD reduction, and microgrid validation.">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>VO-HC Project | Muhammad Noman Ashraf</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Muhammad Noman Ashraf home">
+          <img class="brand-avatar" src="Noman.jpg" alt="Muhammad Noman Ashraf">
+          <span class="brand-copy">
+            <strong>Muhammad Noman Ashraf</strong>
+            <span>PhD in Electrical Engineering</span>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation" data-nav-toggle>Menu</button>
+        <nav class="site-nav" data-site-nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About &amp; Contact</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="industrial-experience.html">Industrial Experience</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+          </ul>
+        </nav>
+
+        
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container project-hero-grid">
+          <div data-reveal>
+            <span class="eyebrow">IEEE Smart Grid Project</span>
+            <h1>Virtual oscillator harmonic compensation for weak and distorted grids</h1>
+            <p class="lead">
+              This project focused on harmonic mitigation in grid-connected inverters operating under weak-grid and
+              distorted-grid conditions. I designed a virtual-oscillator-based harmonic compensation strategy
+              that uses the Andronov-Hopf oscillator as a nonlinear adaptive fundamental extractor and then cancels
+              the remaining harmonic current through a simple feedforward path.
+            </p>
+            <div class="button-row">
+              <a class="btn primary" href="projects.html">Back to Projects</a>
+            </div>
+          </div>
+          <figure class="image-card research-figure-card card" data-reveal>
+            <img src="vo-hc-integration-block.png" alt="Block diagram of the VO-HC harmonic compensation strategy integrated with SRF control">
+            <figcaption>Overall control architecture of the VO-HC method, showing how I integrated the harmonic-compensation path with the SRF controller.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container metrics-row" data-reveal>
+          <article class="metric-card">
+            <strong>18.40% → 2.42%</strong>
+            <span>current THD reduction at light load in weak-grid experimental tests</span>
+          </article>
+          <article class="metric-card">
+            <strong>80%+</strong>
+            <span>THD reduction achieved across the tested load conditions</span>
+          </article>
+          <article class="metric-card">
+            <strong>2-3 ms</strong>
+            <span>approximate transient response when the compensator is enabled</span>
+          </article>
+          <article class="metric-card">
+            <strong>2 kW</strong>
+            <span>laboratory microgrid platform used for simulation and experimental validation</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split-layout">
+          <article class="card statement-card" data-reveal>
+            <span class="eyebrow">Problem</span>
+            <h2>Why harmonic compensation needed a different approach</h2>
+            <p>
+              Harmonic distortion in grid-connected inverters comes from nonideal switching behavior, dead time,
+              nonlinear loads, and weak-grid interaction. Traditional compensation solutions often solve the problem by
+              adding more structure: resonant loops for individual harmonics, repetitive control, multiple signal-cancellation
+              blocks, or frequency-locked extraction methods. That improves steady-state rejection, but it also introduces
+              tuning burden, phase delay, and greater controller complexity.
+            </p>
+            <p>
+              My goal was to design a compensation path that stays simple enough for real converter hardware, but still
+              reacts fast and remains effective under distorted and weak-grid conditions where conventional structures can
+              become sluggish or difficult to tune.
+            </p>
+          </article>
+          <aside class="card details-card" data-reveal>
+            <span class="eyebrow">My Contribution</span>
+            <ul class="detail-list">
+              <li>Developed the Hopf-oscillator-based fundamental extractor for grid current</li>
+              <li>Designed the abc-frame harmonic-isolation and feedforward compensation structure</li>
+              <li>Derived gain-selection guidance and linked the compensator to impedance and stability interpretation</li>
+              <li>Compared the method against PR- and SOGI-based alternatives</li>
+              <li>Validated the design in simulation and on a two-inverter weak-grid laboratory platform</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-accent">
+        <div class="container grid-2">
+          <article class="card" data-reveal>
+            <span class="eyebrow">Method</span>
+            <h2>How I designed the VO-HC scheme</h2>
+            <p>
+              The central idea was to use the Andronov-Hopf oscillator not for synchronization, but as a nonlinear
+              adaptive filter that extracts the fundamental current component from the distorted grid current. Once the
+              fundamental is extracted, subtracting it from the measured current isolates the harmonic content. I then
+              used a simple proportional compensator in the abc frame to generate the harmonic-cancellation signal.
+            </p>
+            <ul class="highlights">
+              <li>The Hopf extractor provides strong fundamental tracking with very small phase delay.</li>
+              <li>The extracted fundamental is converted back to abc and subtracted from the measured current.</li>
+              <li>The harmonic component is compensated as a feedforward term in parallel with the main SRF current controller.</li>
+              <li>When harmonics disappear, the compensator naturally goes to zero and does not interfere with the main loop.</li>
+            </ul>
+          </article>
+          <figure class="image-card research-figure-card card" data-reveal>
+            <img src="vo-hc-extractor-block.png" alt="Block diagram of the Hopf-based fundamental extractor used in the VO-HC project">
+            <figcaption>Fundamental-extraction block showing the nonlinear oscillator structure at the heart of the VO-HC method.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container grid-2">
+          <article class="card" data-reveal>
+            <span class="eyebrow">Problems I Solved</span>
+            <h2>Main technical issues and the solutions I designed</h2>
+            <ul class="highlights">
+              <li><strong>Problem:</strong> Resonant and repetitive methods often need harmonic-specific tuning and introduce phase delay.
+              <br><strong>Solution:</strong> I used one nonlinear extractor plus a simple proportional feedforward path instead of a bank of harmonic-specific regulators.</li>
+              <li><strong>Problem:</strong> Weak-grid and frequency-varying operation can degrade conventional extractors.
+              <br><strong>Solution:</strong> The Hopf dynamics provide inherent frequency adaptivity and do not depend on an external PLL to keep the extractor aligned.</li>
+              <li><strong>Problem:</strong> Harmonic compensation must not disturb the main SRF current controller.
+              <br><strong>Solution:</strong> I designed the compensation as a parallel feedforward channel, so it acts only on the extracted harmonic content.</li>
+              <li><strong>Problem:</strong> Distorted current in weak grids can also worsen the voltage seen at the PCC.
+              <br><strong>Solution:</strong> The compensator improves current quality and, in the tested weak-grid cases, also reduced the observed distortion in the grid voltage.</li>
+            </ul>
+          </article>
+          <figure class="image-card research-figure-card card" data-reveal>
+            <img src="vo-hc-thd-map.png" alt="THD trend from the VO-HC research showing dependence on inductance ratio">
+            <figcaption>Analytical THD map used to motivate why active compensation is still needed even when passive impedance affects harmonic levels.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <span class="eyebrow">Experimental Platform</span>
+              <h2>How I validated the method in hardware</h2>
+            </div>
+            <p class="section-note">The hardware campaign was built around a distorted and weak microgrid rather than an idealized source.</p>
+          </div>
+          <div class="grid-2 image-showcase">
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-hc-microgrid-setup.png" alt="Two-inverter laboratory microgrid setup used for the VO-HC project">
+              <figcaption>Two-inverter laboratory microgrid used to test the VO-HC method under weak-grid and distorted-grid operation.</figcaption>
+            </figure>
+            <article class="card" data-reveal>
+              <h3>Hardware setup details</h3>
+              <ul class="highlights">
+                <li>Implemented the experiments on a two-level, two-inverter microgrid.</li>
+                <li>Ran inverter 1 in grid-forming mode to emulate the grid and injected 5th and 7th voltage harmonics.</li>
+                <li>Ran inverter 2 in grid-following mode with the proposed VO-HC method.</li>
+                <li>Added 1.5 mH series impedance to emulate a weak-grid condition at the PCC.</li>
+                <li>Used a parallel load and DC-supply return path so the injected power could be absorbed safely during tests.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <span class="eyebrow">Results</span>
+              <h2>What the measured results showed</h2>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-hc-light-load.png" alt="Light-load experimental result for the VO-HC project">
+              <figcaption>Light-load experiment showing the current waveform before and after enabling the VO-HC method.</figcaption>
+            </figure>
+            <article class="card" data-reveal>
+              <h3>Load-condition results</h3>
+              <ul class="highlights">
+                <li>25% load: THD reduced from 18.40% to 2.42%.</li>
+                <li>50% load: THD reduced from 12.57% to 2.11%.</li>
+                <li>100% load: THD reduced from 6.73% to 1.31%.</li>
+                <li>The compensation transient stayed around 2-3 ms when enabled.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid-2 section-tight">
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-hc-full-load.png" alt="Full-load experimental result for the VO-HC project">
+              <figcaption>Full-load result showing that the method remains effective even when the inverter is injecting close to rated current.</figcaption>
+            </figure>
+            <article class="card" data-reveal>
+              <h3>Comparison against conventional methods</h3>
+              <ul class="highlights">
+                <li>PR-based compensation improved the same light-load case only to 12.57%, which still failed the 5% target.</li>
+                <li>SOGI-based compensation improved the light-load case to 5.15%, still above the target.</li>
+                <li>VO-HC kept the compensated THD below 5% across the tested light-, mid-, and full-load cases.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid-2 section-tight">
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-hc-frequency-step.png" alt="Frequency-step test result for the VO-HC project">
+              <figcaption>Frequency-step experiment showing that the VO-HC method stays effective when the grid frequency changes.</figcaption>
+            </figure>
+            <article class="card" data-reveal>
+              <h3>Disturbance robustness</h3>
+              <ul class="highlights">
+                <li>49 Hz step test: THD improved from 24.03% to 3.73%.</li>
+                <li>Additional 13th harmonic: THD improved from 28.02% to 3.51%.</li>
+                <li>0.2 p.u. grid unbalance: THD improved from 8.45% to 3.61%.</li>
+                <li>The feedforward structure responded cleanly when grid harmonics were suddenly removed, because the harmonic command naturally collapsed to zero.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid-2 section-tight">
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-hc-extra-harmonic.png" alt="Experimental result with extra 13th harmonic for the VO-HC project">
+              <figcaption>High-distortion test with an additional 13th harmonic, showing the extension of the method beyond only low-order harmonic cases.</figcaption>
+            </figure>
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-hc-unbalanced-grid.png" alt="Unbalanced-grid experimental result for the VO-HC project">
+              <figcaption>Grid-unbalance experiment confirming that the method maintains the compensated THD below the target range in the tested case.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-accent">
+        <div class="container">
+          <article class="card statement-card" data-reveal>
+            <span class="eyebrow">Why This Project Matters</span>
+            <h2>What this work says about how I design converter controllers</h2>
+            <p>
+              This project is a good representation of how I approach power-quality problems: I do not only tune a
+              controller until a waveform looks cleaner. I try to identify the structural reason why conventional
+              methods struggle, redesign the extraction or compensation path around that limitation, and then prove the
+              result experimentally under the nonideal conditions where the method is actually supposed to work.
+            </p>
+            <p>
+              In this case, the final method is simple in implementation, but it came from combining nonlinear
+              oscillator modeling, control integration, gain selection, weak-grid stability thinking, and experimental
+              validation on a microgrid platform. That mix of theory, implementation, and measured verification is a
+              consistent pattern across my work.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Muhammad Noman Ashraf</strong>
+          <p class="footer-copy">Detailed research page for VO-HC design, harmonic mitigation, weak-grid testing, and microgrid validation.</p>
+        </div>
+        <div class="inline-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="publications.html">Publications</a>
+          <a href="about.html">About &amp; Contact</a>
+        </div>
+        <div class="small">© <span id="year"></span> Muhammad Noman Ashraf</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

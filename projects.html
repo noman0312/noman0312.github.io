@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Research and engineering projects by Muhammad Noman Ashraf in power electronics, converter control, and renewable energy systems.">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>Projects | Muhammad Noman Ashraf</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Muhammad Noman Ashraf home">
+          <img class="brand-avatar" src="Noman.jpg" alt="Muhammad Noman Ashraf">
+          <span class="brand-copy">
+            <strong>Muhammad Noman Ashraf</strong>
+            <span>PhD in Electrical Engineering</span>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation" data-nav-toggle>Menu</button>
+        <nav class="site-nav" data-site-nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About &amp; Contact</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="industrial-experience.html">Industrial Experience</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+          </ul>
+        </nav>
+
+        
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container">
+          <span class="eyebrow">Projects</span>
+          <h1>Selected engineering projects across academia and industry.</h1>
+          <p class="lead">
+            This page highlights three core projects: my current BESS work at Khalifa University, transformerless DVC development at OKY, and inverter design during my MSc at Soongsil University.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container project-grid">
+          <article class="card project-feature project-case-study" data-reveal>
+            <p class="stack-label">Current Lead Project</p>
+            <h2>UNIGRID sodium-ion BESS integration for utility-scale validation</h2>
+            <p>
+              This current project focuses on the integration, assembly, and validation of two 150 kWh
+              cabinet-style sodium-ion battery energy storage systems at Khalifa University for field-ready
+              validation with ACWA Power.
+            </p>
+            <p>
+              I am leading the power electronics, grid integration, and control-system work, including converter
+              selection, electrical architecture, communications, protection design, and system-level testing.
+            </p>
+            <div class="metric-inline">
+              <span><strong>Platform:</strong> two 150 kWh Na-ion BESS cabinets</span>
+              <span><strong>Inverter target:</strong> minimum 100 kW bidirectional inverter per unit</span>
+              <span><strong>AC side:</strong> 400 Vac three-phase plus neutral</span>
+              <span><strong>Functions:</strong> grid-forming capability and ancillary services</span>
+            </div>
+            <div class="grid-2 image-showcase project-image-pair">
+              <figure class="image-card card">
+                <img src="uni_block.png" alt="UNIGRID block diagram showing cabinet-level sodium-ion BESS integration architecture">
+                <figcaption>System-level integration architecture for the current sodium-ion BESS project, reflecting the power-conversion and integration work I am leading.</figcaption>
+              </figure>
+              <figure class="image-card card">
+                <img src="uni_bess.png" alt="Rendered cabinet view for the UNIGRID sodium-ion battery energy storage system">
+                <figcaption>Cabinet-style BESS concept for the project where I am leading the power-electronics, grid-integration, and control-system work.</figcaption>
+              </figure>
+            </div>
+            <ul class="highlights">
+              <li>Project scope includes detailed engineering review, BOM finalization, electrical integration, controller and HMI development, safety integration, and final prototype testing.</li>
+              <li>The system is being designed around bidirectional grid-tied operation, outdoor-rated cabinets, thermal management, and utility-facing safety requirements.</li>
+              <li>The testing path includes staged power-up, low-power verification, charge-discharge cycles, and full-power grid-connected validation.</li>
+              <li>The project combines battery integration, power conversion, communication design, automation logic, and field-ready documentation.</li>
+            </ul>
+            <div class="button-row">
+              <a class="btn primary" href="project-unigrid.html">Read full project page</a>
+            </div>
+          </article>
+
+          <article class="card project-feature project-case-study" data-reveal>
+            <p class="stack-label">Industrial R&amp;D Case Study</p>
+            <h2>10 kW transformerless DVC development at OKY</h2>
+            <p>
+              At OKY, I worked on a three-phase 10 kW transformerless dynamic voltage compensator for 220 V
+              operation, combining a high-current bidirectional DC-DC converter with a three-phase inverter stage.
+              The system was designed around supercapacitor energy storage and fast mode transition requirements
+              for voltage sag support.
+            </p>
+            <p>
+              I carried out the complete hardware design and controller design for the platform.
+            </p>
+            <div class="metric-inline">
+              <span><strong>Input side:</strong> 25-50 V supercapacitor interface up to 400 A</span>
+              <span><strong>DC link:</strong> 400 V</span>
+              <span><strong>Output:</strong> 10 kW three-phase inverter / DVC platform</span>
+              <span><strong>Target transfer:</strong> less than 0.5 ms</span>
+            </div>
+            <div class="grid-2 image-showcase project-image-pair">
+              <figure class="image-card card">
+                <img src="transless-topology.png" alt="Transless DVC DC-DC topology showing interleaved boost and dual active bridge">
+                <figcaption>Two-stage DC-DC topology that I selected and developed to handle very high low-voltage current and high step-up gain.</figcaption>
+              </figure>
+              <figure class="image-card card">
+                <img src="transless-dcdc-assembly.png" alt="Assembled 10 kilowatt transless DC-DC converter board">
+                <figcaption>Assembled DC-DC hardware that I designed, including the module arrangement, gate-drive integration, and power-stage layout.</figcaption>
+              </figure>
+            </div>
+            <ul class="highlights">
+              <li>Used a two-stage architecture: interleaved boost on the low-voltage side and dual active bridge on the high-voltage side.</li>
+              <li>Handled complete hardware design, including module design, PCB/layout decisions, sensing integration, and control-board interfacing.</li>
+              <li>Designed the controller structure for the DC-DC and inverter sections, including mode handling, voltage regulation, and system coordination.</li>
+              <li>Designed around a difficult engineering regime where 400 A input current created major thermal, layout, and efficiency challenges.</li>
+              <li>Integrated bidirectional operation so the supercapacitor side could both discharge to support the inverter and be charged in reverse power flow.</li>
+            </ul>
+            <div class="button-row">
+              <a class="btn primary" href="project-transless-dvc.html">Read full project page</a>
+              <a class="btn" href="Transless DC-DC Converter.pptx.pdf" target="_blank" rel="noopener">Open project deck</a>
+            </div>
+          </article>
+
+          <article class="card project-feature" data-reveal>
+            <p class="stack-label">MSc Project</p>
+            <h2>5 kW inverter design during MSc at Soongsil University</h2>
+            <p>
+              During my MSc at Soongsil University, I designed and tested a 5 kW bidirectional inverter system
+              for AC/DC microgrid applications in the RECL laboratory.
+            </p>
+            <figure class="image-card card">
+              <img src="1550907028853.jpg" alt="Muhammad Noman Ashraf in the laboratory holding a thermal camera, wearing safety goggles, beside the MSc inverter test setup">
+              <figcaption>Laboratory testing during my MSc work at Soongsil University, using a thermal camera during inverter-platform validation.</figcaption>
+            </figure>
+            <ul class="highlights">
+              <li>Designed the inverter for both inverter and rectifier mode operation with bidirectional power flow.</li>
+              <li>Implemented ripple-correlation MPPT and average DC-link voltage control.</li>
+              <li>Developed current-control strategies in rotating and stationary reference frames.</li>
+              <li>Used the platform for harmonic compensation and islanding detection verification during my master's work.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">5 kW Inverter</span>
+              <span class="tag">MSc Work</span>
+              <span class="tag">AC/DC Microgrid</span>
+              <span class="tag">Experimental Validation</span>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Muhammad Noman Ashraf</strong>
+          <p class="footer-copy">Selected projects across power electronics research, converter hardware, and embedded control.</p>
+        </div>
+        <div class="inline-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About &amp; Contact</a>
+          <a href="publications.html">Publications</a>
+        </div>
+        <div class="small">© <span id="year"></span> Muhammad Noman Ashraf</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

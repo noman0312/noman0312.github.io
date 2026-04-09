@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed project page for Muhammad Noman Ashraf's transformerless 10 kW dynamic voltage compensator project, covering hardware design, controller design, engineering challenges, and development outcomes.">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>Transformerless DVC 10 kW | Muhammad Noman Ashraf</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Muhammad Noman Ashraf home">
+          <img class="brand-avatar" src="Noman.jpg" alt="Muhammad Noman Ashraf">
+          <span class="brand-copy">
+            <strong>Muhammad Noman Ashraf</strong>
+            <span>PhD in Electrical Engineering</span>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation" data-nav-toggle>Menu</button>
+        <nav class="site-nav" data-site-nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About &amp; Contact</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="industrial-experience.html">Industrial Experience</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+          </ul>
+        </nav>
+
+        
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container project-hero-grid">
+          <div data-reveal>
+            <span class="eyebrow">Featured Project</span>
+            <h1>Transformerless DVC 10 kW</h1>
+            <p class="lead">
+              A three-phase transformerless dynamic voltage compensator built around a bidirectional supercapacitor-fed
+              DC-DC converter and inverter platform. In this project, I carried out the complete hardware design and
+              controller design for the system.
+            </p>
+            <div class="button-row">
+              <a class="btn primary" href="projects.html">Back to Projects</a>
+              <a class="btn" href="Transless DC-DC Converter.pptx.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-person-chalkboard" style="margin-right:0.4rem"></i>Project Deck</a>
+            </div>
+          </div>
+
+          <figure class="image-card card" data-reveal>
+            <img src="transless-topology.png" alt="Transformerless DVC two-stage topology with interleaved boost and dual active bridge">
+            <figcaption>System-level topology that I selected and developed for the transless 10 kW DVC platform.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container metrics-row project-metrics" data-reveal>
+          <article class="metric-card">
+            <strong>10 kW</strong>
+            <span>rated DVC and inverter platform</span>
+          </article>
+          <article class="metric-card">
+            <strong>25-50 V</strong>
+            <span>supercapacitor-side input range</span>
+          </article>
+          <article class="metric-card">
+            <strong>400 A</strong>
+            <span>high-current low-voltage input challenge on the DC-DC side</span>
+          </article>
+          <article class="metric-card">
+            <strong>&lt; 0.5 ms</strong>
+            <span>targeted transfer time for compensation and mode transition</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split-layout">
+          <article class="card statement-card" data-reveal>
+            <span class="eyebrow">My Contribution</span>
+            <h2>Complete hardware and controller design</h2>
+            <p>
+              This was not a support role. I was responsible for the complete hardware and controller design of the
+              project. That included translating the system requirements into a practical power-stage architecture,
+              selecting the converter topology, designing the hardware modules, planning sensing and control
+              interfaces, and defining the software control structure for both the DC-DC and inverter sections.
+            </p>
+            <p>
+              The project demanded design decisions under real industrial constraints: very high low-voltage current,
+              wide voltage conversion ratio, bidirectional power flow, fast transition requirements, and the need to
+              make the platform manufacturable, testable, and scalable toward production.
+            </p>
+          </article>
+
+          <article class="card details-card" data-reveal>
+            <span class="eyebrow">Key Responsibilities</span>
+            <ul class="detail-list">
+              <li>Selected and developed the two-stage DC-DC topology for high current and high gain operation.</li>
+              <li>Designed the hardware modules, module layout, gate-drive arrangement, and control-board interface.</li>
+              <li>Defined the sensing scheme for current, voltage, protection, and system coordination.</li>
+              <li>Designed the controller structure for DC-DC boost/buck operation and for the three-phase inverter.</li>
+              <li>Analyzed the practical issues blocking production readiness and identified the redesign roadmap.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-accent">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <span class="eyebrow">Architecture</span>
+              <h2>System structure and engineering rationale</h2>
+            </div>
+          </div>
+          <div class="grid-2">
+            <article class="card" data-reveal>
+              <h3>DC-DC stage</h3>
+              <p>
+                The DC-DC front end was designed as a two-stage system. An interleaved boost converter handled the
+                low-voltage high-current supercapacitor side, while a dual active bridge handled the high-gain transfer
+                to the 400 V DC link. This choice was driven by the difficulty of achieving the required gain and
+                efficiency with a single-stage approach under 400 A operating conditions.
+              </p>
+              <ul class="highlights">
+                <li>Interleaved boost selected to reduce ripple and improve current sharing.</li>
+                <li>Dual active bridge selected to support high-gain bidirectional transfer and easier control.</li>
+                <li>Architecture designed for both discharge support and charging of the supercapacitor side.</li>
+              </ul>
+            </article>
+
+            <article class="card" data-reveal>
+              <h3>Inverter stage</h3>
+              <p>
+                The inverter side used a three-phase structure designed to operate from the 400 V DC link and support
+                voltage compensation behavior. The control strategy was based on independently controlled legs in the
+                stationary frame, with outer voltage control, inner current control, and feedforward terms to improve
+                dynamic response and flexibility under nonideal load conditions.
+              </p>
+              <ul class="highlights">
+                <li>Three-phase inverter platform with LC output filtering.</li>
+                <li>Independent leg control suited to non-ideal and unbalanced loading scenarios.</li>
+                <li>Controller designed around fast voltage support and seamless operating transitions.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <span class="eyebrow">Hardware</span>
+              <h2>What I designed on the hardware side</h2>
+            </div>
+          </div>
+          <div class="grid-2 image-showcase">
+            <figure class="image-card card" data-reveal>
+              <img src="transless-dcdc-assembly.png" alt="10 kilowatt transless DC-DC converter board assembly">
+              <figcaption>DC-DC hardware assembly that I designed, including stacked gate modules and high-side / low-side integration.</figcaption>
+            </figure>
+            <figure class="image-card card" data-reveal>
+              <img src="transless-inverter-assembly.png" alt="10 kilowatt inverter assembly with control board and filter components">
+              <figcaption>Inverter assembly that I designed, with the control board, relay board, and filter hardware integrated into the power stage.</figcaption>
+            </figure>
+          </div>
+          <div class="grid-2">
+            <article class="card" data-reveal>
+              <h3>Hardware design scope</h3>
+              <ul class="highlights">
+                <li>Designed the power module structure for both DC-DC and inverter sections.</li>
+                <li>Worked on PCB/module arrangement, busbar-aware layout, and stacked gate-driver organization.</li>
+                <li>Handled practical integration of sensing, gate-drive interconnection, and control-board interfacing.</li>
+                <li>Designed around harsh current and voltage constraints, especially on the 25-50 V / 400 A side.</li>
+              </ul>
+            </article>
+            <article class="card" data-reveal>
+              <h3>Major hardware constraints</h3>
+              <ul class="highlights">
+                <li>400 A low-voltage input current made conduction loss, heating, and current distribution major design drivers.</li>
+                <li>High-side gate-driver clearance and long traces increased vulnerability and ringing risk.</li>
+                <li>Sensing quality and noise immunity became critical for both control fidelity and protection.</li>
+                <li>Switch placement, capacitor placement, and gate-drive distance directly affected reliability.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tight">
+        <div class="container grid-2 image-showcase">
+          <figure class="image-card card" data-reveal>
+            <img src="20191121_150849.jpg" alt="Muhammad Noman Ashraf working with converter hardware and oscilloscope in the lab">
+            <figcaption>Hands-on lab work on the hardware I designed, reflecting the practical side of my controller implementation and validation process.</figcaption>
+          </figure>
+          <figure class="image-card card" data-reveal>
+            <img src="1571894874032-1.JPEG" alt="Muhammad Noman Ashraf in the lab with instrumentation and prototype hardware">
+            <figcaption>Prototype debugging, waveform observation, and validation work on hardware that I developed during experimental implementation.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <span class="eyebrow">Controller Design</span>
+              <h2>What I designed on the control side</h2>
+            </div>
+          </div>
+          <div class="grid-2 image-showcase">
+            <figure class="image-card card" data-reveal>
+              <img src="transless-control-diagram.png" alt="Control diagram for the inverter section">
+              <figcaption>Control structure that I designed for the inverter section, showing reference generation, current feedforward, and voltage feedforward.</figcaption>
+            </figure>
+            <article class="card statement-card" data-reveal>
+              <h3>Controller strategy</h3>
+              <p>
+                On the DC-DC side, the control structure separated boost-mode and buck-mode operation, with voltage
+                regulation at key nodes and bidirectional operation for supercapacitor charging and discharge support.
+                On the inverter side, I designed an independent leg control framework using single-phase stationary-frame
+                current and voltage control loops.
+              </p>
+              <ul class="highlights">
+                <li>Boost mode handled voltage build-up toward the 400 V DC link.</li>
+                <li>Buck mode supported reverse power flow to charge the supercapacitor side.</li>
+                <li>Protection and trip-zone logic were incorporated as part of the controller design problem.</li>
+                <li>Feedforward terms were used to improve dynamic behavior in the inverter control structure.</li>
+                <li>Controller coordination was designed around mode transition, DC-link regulation, and safe interaction between the storage side and inverter side.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <span class="eyebrow">Problems and Solutions</span>
+              <h2>What I had to solve to make the platform practical</h2>
+            </div>
+            <p class="section-note">The difficulty of this project was not only in drawing the topology. It was in turning demanding system requirements into hardware and control choices that could actually be built and tested.</p>
+          </div>
+          <div class="grid-2">
+            <article class="card" data-reveal>
+              <h3>Problem 1: very high current at the storage side</h3>
+              <p>
+                The supercapacitor interface operated in the 25-50 V range while the system target required transfer
+                to a 400 V DC link. At the low-voltage side, the current could rise toward 400 A. That operating
+                region makes conduction loss, current sharing, magnetic sizing, layout parasitics, and thermal stress
+                dominant design constraints.
+              </p>
+              <ul class="highlights">
+                <li>I selected an interleaved boost front end so the current could be distributed across phases instead of forcing one path to carry the full stress.</li>
+                <li>I used the dual-active-bridge stage to achieve the required high conversion ratio and bidirectional transfer more cleanly than a single-stage solution.</li>
+                <li>I designed the physical module arrangement around short current paths, practical gate-drive routing, and manageable integration of sensing hardware.</li>
+              </ul>
+            </article>
+
+            <article class="card" data-reveal>
+              <h3>Problem 2: fast voltage support with seamless transition</h3>
+              <p>
+                A DVC platform only becomes useful if it can detect grid events quickly and move the load-support
+                function onto the inverter without unstable or visibly poor transient behavior. That requirement pushed
+                the control design beyond steady-state voltage regulation.
+              </p>
+              <ul class="highlights">
+                <li>I designed the inverter control around independent leg control in the stationary frame so the system could respond flexibly to practical load conditions.</li>
+                <li>I used outer voltage regulation, inner current regulation, and feedforward terms to strengthen dynamic behavior during compensation events.</li>
+                <li>I treated transition logic, reference generation, and protection interaction as part of the controller design, not as afterthoughts.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="grid-2 section-tight">
+            <article class="card" data-reveal>
+              <h3>Problem 3: noisy hardware is a control problem too</h3>
+              <p>
+                In this current and switching range, sensing quality, gate-drive distance, switching-node ringing,
+                and board-level parasitics directly affect whether a controller behaves as intended. A mathematically
+                correct controller is not enough if the measurement chain is unreliable.
+              </p>
+              <ul class="highlights">
+                <li>I designed the sensing and interface structure with attention to noise sensitivity, signal integrity, and practical protection requirements.</li>
+                <li>I identified high-side gate-driver clearance and long-loop issues as major risks for robustness and future productization.</li>
+                <li>I used prototype results to define the redesign roadmap rather than treating the first build as the final design.</li>
+              </ul>
+            </article>
+
+            <article class="card" data-reveal>
+              <h3>Problem 4: bidirectional operation needed coordinated control</h3>
+              <p>
+                The platform was not a one-direction booster. It had to discharge the supercapacitor side for support
+                and also reverse the power flow for charging. That means the controller must coordinate operating mode,
+                voltage targets, and protective actions across the full platform.
+              </p>
+              <ul class="highlights">
+                <li>I separated boost and buck control behavior so the same hardware could support both discharge and recharge operation.</li>
+                <li>I incorporated trip-zone and supervisory behavior into the control structure to keep the platform safe during testing.</li>
+                <li>I treated the DC-DC and inverter sections as one coordinated system rather than two isolated converter problems.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-accent">
+        <div class="container grid-2">
+          <article class="card" data-reveal>
+            <span class="eyebrow">Results</span>
+            <h2>Project outcomes</h2>
+            <ul class="highlights">
+              <li>Completed the prototype-level hardware and controller development for both the DC-DC and inverter sections.</li>
+              <li>Achieved a working 10 kW inverter module in inverter mode and established the electrical foundation for the full DVC platform.</li>
+              <li>Defined the architecture, sensing paths, control structure, and bidirectional operating logic for the overall system.</li>
+              <li>Used experimental observations to identify the specific hardware and layout changes required for a stronger next-generation build.</li>
+            </ul>
+          </article>
+          <article class="card" data-reveal>
+            <span class="eyebrow">Engineering Lessons</span>
+            <h2>Why this project matters</h2>
+            <p>
+              This project is a strong representation of my work because it shows full-stack engineering ownership:
+              system architecture, converter hardware, controller design, sensing, protection concerns, practical noise
+              problems, and redesign planning. It demonstrates not only the ability to build working hardware, but also
+              the ability to diagnose why an advanced platform is not yet production-ready and what should be improved.
+            </p>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Muhammad Noman Ashraf</strong>
+          <p class="footer-copy">Detailed project page for transformerless DVC development, hardware design, and controller design.</p>
+        </div>
+        <div class="inline-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="about.html">About &amp; Contact</a>
+        </div>
+        <div class="small">© <span id="year"></span> Muhammad Noman Ashraf</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

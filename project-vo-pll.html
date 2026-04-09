@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Detailed project page for Muhammad Noman Ashraf's VO-PLL research, covering Andronov-Hopf-oscillator-based synchronization, weak-grid operation, disturbance rejection, and experimental validation.">
+  <meta name="theme-color" content="#f5f5f7">
+  <title>VO-PLL Project | Muhammad Noman Ashraf</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html" aria-label="Muhammad Noman Ashraf home">
+          <img class="brand-avatar" src="Noman.jpg" alt="Muhammad Noman Ashraf">
+          <span class="brand-copy">
+            <strong>Muhammad Noman Ashraf</strong>
+            <span>PhD in Electrical Engineering</span>
+          </span>
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation" data-nav-toggle>Menu</button>
+        <nav class="site-nav" data-site-nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About &amp; Contact</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="industrial-experience.html">Industrial Experience</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="teaching.html">Teaching</a></li>
+          </ul>
+        </nav>
+
+        
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-hero">
+        <div class="container project-hero-grid">
+          <div data-reveal>
+            <span class="eyebrow">IEEE TPEL Project</span>
+            <h1>Virtual oscillator PLL for distorted and weak-grid synchronization</h1>
+            <p class="lead">
+              This project focused on redesigning the PLL layer of a three-phase grid-connected inverter so that
+              synchronization remains fast and reliable under harmonics, weak-grid conditions, phase jumps, and
+              voltage disturbances. I developed a VO-PLL using an Andronov-Hopf oscillator and validated it in
+              real-time closed-loop experiments.
+            </p>
+            <div class="button-row">
+              <a class="btn primary" href="projects.html">Back to Projects</a>
+              <a class="btn" href="Published.pdf" target="_blank" rel="noopener">Open published paper</a>
+            </div>
+          </div>
+          <figure class="image-card research-figure-card card" data-reveal>
+            <img src="vo-pll-diagram.png" alt="Virtual oscillator based PLL control structure">
+            <figcaption>Algorithm architecture of the VO-PLL, showing the oscillator-centered synchronization loop that I designed and validated.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container metrics-row" data-reveal>
+          <article class="metric-card">
+            <strong>20 kW</strong>
+            <span>grid-connected inverter platform used for experimental validation</span>
+          </article>
+          <article class="metric-card">
+            <strong>5 ms</strong>
+            <span>approximate settling time in the phase-jump experiment</span>
+          </article>
+          <article class="metric-card">
+            <strong>0.2°</strong>
+            <span>phase error during the 50 Hz to 60 Hz frequency-ramp test</span>
+          </article>
+          <article class="metric-card">
+            <strong>10 kHz</strong>
+            <span>switching and sampling frequency in the real-time implementation</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split-layout">
+          <article class="card statement-card" data-reveal>
+            <span class="eyebrow">Problem</span>
+            <h2>Why this synchronization problem mattered</h2>
+            <p>
+              Conventional SRF-PLLs are widely used in grid-connected inverters, but their behavior becomes
+              problematic in distorted grids. If the bandwidth is reduced, disturbance rejection improves but the PLL
+              becomes too slow. If the bandwidth is increased or additional filtering is introduced, the steady-state
+              phase error improves, but stability margin and transient speed become less attractive.
+            </p>
+            <p>
+              In weak and harmonic-rich grids, this tradeoff directly affects the converter's ability to inject current
+              safely and accurately. The objective of this project was therefore not just to track the grid angle, but
+              to redesign the synchronization mechanism so that it stays fast, robust, and experimentally usable in
+              closed-loop converter control.
+            </p>
+          </article>
+          <aside class="card details-card" data-reveal>
+            <span class="eyebrow">My Contribution</span>
+            <ul class="detail-list">
+              <li>Designed the VO-PLL structure using the Andronov-Hopf oscillator as the core synchronization block</li>
+              <li>Derived the algorithm, parameter-selection logic, and disturbance-rejection interpretation</li>
+              <li>Implemented the method in discrete time for real-time converter control</li>
+              <li>Built the comparison campaign against type-II and type-III SRF-PLL variants</li>
+              <li>Validated the method experimentally in both standalone disturbance tests and closed-loop current injection</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section section-accent">
+        <div class="container grid-2">
+          <article class="card" data-reveal>
+            <span class="eyebrow">Core Idea</span>
+            <h2>How I changed the PLL structure</h2>
+            <p>
+              The key design decision was to replace the conventional PI controller and resettable-integrator chain
+              of a standard SRF-PLL with a proportional stage and a Hopf oscillator. The oscillator generates the
+              orthogonal internal states and phase angle used for feedback, while its nonlinear limit-cycle dynamics
+              provide self-sustained oscillation, harmonic selectivity, and an internal integral effect.
+            </p>
+            <ul class="highlights">
+              <li>Grid voltage is transformed into dq quantities and the phase error is formed from the q-axis component.</li>
+              <li>The frequency-estimation loop uses the sampled phase-error information together with a feedforward frequency term.</li>
+              <li>The estimated frequency and voltage magnitude are injected into the Hopf oscillator dynamics.</li>
+              <li>The oscillator outputs the synchronized orthogonal signals and phase angle used to close the loop.</li>
+            </ul>
+          </article>
+          <article class="card" data-reveal>
+            <span class="eyebrow">Design Logic</span>
+            <h2>Why this solved the conventional tradeoff</h2>
+            <p>
+              The oscillator offers strong fundamental-frequency preference and harmonic attenuation without relying on
+              multiple filtering layers. In my analysis, this allowed the proposed structure to behave like a higher-order
+              disturbance-resistant PLL while retaining much faster dynamics than the type-III alternatives used for comparison.
+            </p>
+            <ul class="highlights">
+              <li>The describing-function analysis showed clear prioritization of the fundamental component over the 5th, 7th, and 11th harmonics.</li>
+              <li>The real-time design only needed two main parameters, the Hopf gain and proportional gain, which I linked to desired settling time.</li>
+              <li>This made the method much easier to tune than a more layered filtering-based PLL.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <span class="eyebrow">Experimental Platform</span>
+              <h2>How I validated the design</h2>
+            </div>
+            <p class="section-note">The method was not kept at the simulation level. It was implemented and tested on a real grid-connected inverter platform.</p>
+          </div>
+          <div class="grid-2 image-showcase">
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-pll-setup.png" alt="dSPACE MicroLabBox based grid-connected inverter setup for VO-PLL experiments">
+              <figcaption>Experimental GCI platform used to test the VO-PLL, including real-time implementation and distorted-grid emulation.</figcaption>
+            </figure>
+            <article class="card" data-reveal>
+              <h3>Validation setup details</h3>
+              <ul class="highlights">
+                <li>Used a 20 kW two-level grid-connected inverter with dSPACE MicroLabBox for controller implementation.</li>
+                <li>Used a Cinergia grid emulator to inject distorted-grid conditions with 5th, 7th, and 11th harmonics.</li>
+                <li>Captured waveforms on a Yokogawa oscilloscope and compared directly against type-II and type-III SRF-PLL implementations.</li>
+                <li>Ran both open disturbance tests and closed-loop dq current-control tests with active-power injection.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head" data-reveal>
+            <div>
+              <span class="eyebrow">Problems and Solutions</span>
+              <h2>What disturbances I designed the VO-PLL to handle</h2>
+            </div>
+          </div>
+          <div class="grid-2">
+            <article class="card" data-reveal>
+              <h3>Phase jump and transient overshoot</h3>
+              <p>
+                A 10° phase jump was used to test transient speed. Conventional PLLs showed noticeably larger overshoot
+                and slower settling, which is exactly the kind of behavior that becomes troublesome during grid
+                disturbances and reconnection events.
+              </p>
+              <ul class="highlights">
+                <li>VO-PLL peak phase error: about 2.5°</li>
+                <li>Type-II SRF-PLL: about 12.2° overshoot</li>
+                <li>Type-III SRF-PLL: about 10° overshoot</li>
+                <li>VO-PLL settling time: about 5 ms, faster than both references</li>
+              </ul>
+            </article>
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-pll-phase-jump.png" alt="Phase-jump result comparing VO-PLL against conventional PLL structures">
+              <figcaption>Phase-jump response used to benchmark the transient behavior of the proposed VO-PLL.</figcaption>
+            </figure>
+          </div>
+
+          <div class="grid-2 section-tight">
+            <article class="card" data-reveal>
+              <h3>Frequency ramp tracking</h3>
+              <p>
+                A 50 Hz to 60 Hz ramp at 5 Hz/s was used to test frequency adaptivity. The design goal here was to
+                keep the phase error almost negligible while the grid frequency changed continuously.
+              </p>
+              <ul class="highlights">
+                <li>Type-II PLL showed about 11.5° steady-state phase error during the ramp.</li>
+                <li>Type-III PLL reduced this to about 2°.</li>
+                <li>VO-PLL reduced the ramp error further to about 0.2°.</li>
+              </ul>
+            </article>
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-pll-frequency-ramp.png" alt="Frequency-ramp test result for the VO-PLL project">
+              <figcaption>Frequency-ramp test highlighting the very small phase error achieved by the proposed synchronization method.</figcaption>
+            </figure>
+          </div>
+
+          <div class="grid-2 section-tight">
+            <article class="card" data-reveal>
+              <h3>Sequence reversal, sag, and weak-grid operation</h3>
+              <p>
+                The design was also tested against phase-sequence reversal, single-phase sag, and closed-loop current
+                injection with added line impedance. These tests matter because they move the problem from idealized
+                synchronization into realistic converter operation.
+              </p>
+              <ul class="highlights">
+                <li>VO-PLL sequence-reversal test error stayed around 0.1°, while the type-II structure reached about 21°.</li>
+                <li>During single-phase sag, the VO-PLL kept the phase error around 0.3°, below the compared PLLs.</li>
+                <li>In closed-loop operation, the method maintained synchronization under both strong and weak grid conditions.</li>
+              </ul>
+            </article>
+            <figure class="image-card research-figure-card card" data-reveal>
+              <img src="vo-pll-disturbance-tests.png" alt="Sequence reversal and voltage-sag experimental tests for the VO-PLL project">
+              <figcaption>Disturbance tests showing the robustness of the VO-PLL to sequence reversal and voltage sag.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-accent">
+        <div class="container grid-2">
+          <figure class="image-card research-figure-card card" data-reveal>
+            <img src="vo-pll-closed-loop.png" alt="Closed-loop strong-grid and weak-grid result for the VO-PLL project">
+            <figcaption>Closed-loop grid-connected operation with dq current control and the VO-PLL under strong-grid and weak-grid conditions.</figcaption>
+          </figure>
+          <article class="card" data-reveal>
+            <span class="eyebrow">Why This Project Matters</span>
+            <h2>What this work shows about how I approach converter control</h2>
+            <p>
+              This project shows how I work from a control problem all the way to experimental proof. I did not stop
+              at proposing a new oscillator-based idea. I also turned it into a practically implementable discrete-time
+              synchronization block, tuned it from transient-response targets, built the comparison framework, and
+              validated it in closed-loop converter operation.
+            </p>
+            <p>
+              It is also a good representation of how I connect power electronics and power systems: the work begins
+              with a converter-level PLL problem, but the real objective is stable and reliable operation in the
+              converter-dominated grids that future power systems increasingly depend on.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <strong>Muhammad Noman Ashraf</strong>
+          <p class="footer-copy">Detailed research page for VO-PLL design, distorted-grid synchronization, and experimental converter validation.</p>
+        </div>
+        <div class="inline-links">
+          <a href="index.html">Home</a>
+          <a href="projects.html">Projects</a>
+          <a href="publications.html">Publications</a>
+          <a href="about.html">About &amp; Contact</a>
+        </div>
+        <div class="small">© <span id="year"></span> Muhammad Noman Ashraf</div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
