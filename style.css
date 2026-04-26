@@ -1108,9 +1108,16 @@ figure {
   border-bottom: 0;
 }
 
+.photo-story .image-card > a {
+  aspect-ratio: auto;
+  background: var(--surface);
+}
+
 .photo-story .image-card img {
-  max-height: 340px;
-  object-position: center top;
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
 }
 
 .reference-card {
