@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="D2 Series single-phase DVC firmware modernization project by Muhammad Noman Ashraf, covering product-series firmware updates, current-controller tuning, overshoot reduction, sag response, and validation." name="description"/>
+<meta content="#f5f5f7" name="theme-color"/>
+<title>D2 Series Firmware Modernization | Muhammad Noman Ashraf</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="page-shell">
+<header class="site-header">
+<div class="container nav-wrap">
+<a aria-label="Muhammad Noman Ashraf home" class="brand" href="index.html">
+<img alt="Muhammad Noman Ashraf" class="brand-avatar" src="assets/profile/Noman.jpg"/>
+<span class="brand-copy">
+<strong>Muhammad Noman Ashraf</strong>
+<span>PhD in Electrical Engineering</span>
+</span>
+</a>
+<button aria-expanded="false" aria-label="Toggle navigation" class="nav-toggle" data-nav-toggle="" type="button">Menu</button>
+<nav class="site-nav" data-site-nav="">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About &amp; Contact</a></li>
+<li><a href="skills.html">Skills</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="industrial-experience.html">Industrial Experience</a></li>
+<li><a href="publications.html">Publications</a></li>
+<li><a href="teaching.html">Teaching</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<main id="main">
+<section class="page-hero">
+<div class="container project-hero-grid">
+<div data-reveal="">
+<span class="eyebrow">Industrial Firmware Project</span>
+<h1>D2 Series single-phase DVC firmware modernization</h1>
+<p class="lead">
+              At OKY Ltd., I updated the firmware across a complete D2 Series single-phase dynamic voltage
+              compensator product family. The work focused on product-wide firmware consistency, per-model current
+              controller tuning, sag-response behavior, reducing overshoot during fast compensation events, and
+              managing firmware versions used in production.
+            </p>
+<div class="button-row">
+<a class="btn primary" href="projects.html">Back to Projects</a>
+<a class="btn" href="industrial-experience.html">Industrial Experience</a>
+</div>
+</div>
+<figure class="image-card research-figure-card card" data-reveal="">
+<a href="assets/projects/d2series-firmware/d2-rack-product.svg" rel="noopener" target="_blank"><img alt="Rack-mount D2 Series dynamic voltage compensator product illustration" src="assets/projects/d2series-firmware/d2-rack-product.svg"/></a>
+<figcaption>Rack-mount D2 Series product form based on the supplied product image, representing the product family whose firmware I updated and tuned.</figcaption>
+</figure>
+</div>
+</section>
+<section class="section">
+<div class="container metrics-row" data-reveal="">
+<article class="metric-card">
+<strong>D2 Series</strong>
+<span>single-phase dynamic voltage compensator product family</span>
+</article>
+<article class="metric-card">
+<strong>300 VA-30 kVA</strong>
+<span>product range covered across low- and higher-power models</span>
+</article>
+<article class="metric-card">
+<strong>D2W</strong>
+<span>wall-mount product type with 300 VA-3 kVA target range</span>
+</article>
+<article class="metric-card">
+<strong>Firmware</strong>
+<span>current-controller tuning, sag-response behavior, and overshoot reduction</span>
+</article>
+</div>
+</section>
+<section class="section">
+<div class="container split-layout">
+<article class="card statement-card" data-reveal="">
+<span class="eyebrow">My Contribution</span>
+<h2>Product-wide firmware update and controller retuning</h2>
+<p>
+              This project was different from a one-off prototype. I worked on the firmware of an existing commercial
+              product series, where each product rating needed reliable behavior, consistent control logic, and
+              controller tuning appropriate to its power stage.
+            </p>
+<p>
+              The key engineering task was to update the complete firmware path and then tune the current controller
+              for each product so the DVC response became cleaner during sag compensation, with less overshoot and
+              better practical behavior during fast transitions. I also tracked updated firmware versions and
+              coordinated with the production team so newly shipped products received the correct firmware builds.
+            </p>
+</article>
+<aside class="card details-card" data-reveal="">
+<span class="eyebrow">Product and Production Support</span>
+<ul class="detail-list">
+<li>English LCD display behavior and user-facing product status flow</li>
+<li>Voltage-sag history storage and event visibility</li>
+<li>Input/output noise-filter support for internal and external noise robustness</li>
+<li>Residual supercapacitor energy display and related state handling</li>
+<li>MS connector cable and bypass-gender support for installation and emergency operation</li>
+<li>Supercapacitor lifetime expectation function and product-health indication</li>
+<li>Firmware-version tracking for released and updated product builds</li>
+<li>Production-team coordination for firmware installation on newly shipped products</li>
+</ul>
+</aside>
+</div>
+</section>
+<section class="section section-accent">
+<div class="container">
+<div class="section-head" data-reveal="">
+<div>
+<span class="eyebrow">Product Series</span>
+<h2>D2 Series product range and form factors</h2>
+</div>
+<p class="section-note">The firmware work had to support a commercial product family rather than a single laboratory converter.</p>
+</div>
+<div class="grid-2 image-showcase project-image-pair">
+<figure class="image-card research-figure-card card" data-reveal="">
+<a href="assets/projects/d2series-firmware/d2-rack-product.svg" rel="noopener" target="_blank"><img alt="Rack-mount D2 Series DVC product illustration" src="assets/projects/d2series-firmware/d2-rack-product.svg"/></a>
+<figcaption>Rack-mount product form for D2 Series voltage-sag compensation products.</figcaption>
+</figure>
+<figure class="image-card research-figure-card card" data-reveal="">
+<a href="assets/projects/d2series-firmware/d2-wall-product.svg" rel="noopener" target="_blank"><img alt="Wall-mount D2W dynamic voltage compensator product illustration" src="assets/projects/d2series-firmware/d2-wall-product.svg"/></a>
+<figcaption>D2W wall-mount form factor. The wall-mount type covered the 300 VA to 3 kVA range.</figcaption>
+</figure>
+</div>
+<div class="spec-table-wrap" data-reveal="">
+<table class="spec-table">
+<thead>
+<tr>
+<th>Model</th>
+<th>D2*-300</th>
+<th>D2*-500</th>
+<th>D2*-1000</th>
+<th>D2*-2000</th>
+<th>D2*-3000</th>
+<th>D2*-5000</th>
+<th>D2*-10K</th>
+<th>D2P-30K</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>Capacity</th>
+<td>300 VA</td>
+<td>500 VA</td>
+<td>1 kVA</td>
+<td>2 kVA</td>
+<td>3 kVA</td>
+<td>5 kVA</td>
+<td>10 kVA</td>
+<td>30 kVA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="section-head" data-reveal="">
+<div>
+<span class="eyebrow">Control Work</span>
+<h2>What I solved in firmware and tuning</h2>
+</div>
+<p class="section-note">The core work was to make the product series behave consistently across ratings while improving dynamic sag-response behavior.</p>
+</div>
+<div class="grid-2">
+<article class="card" data-reveal="">
+<h3>Product-wide firmware consistency</h3>
+<p>
+                Firmware changes in a product series have to preserve installation behavior, display logic, sag
+                event storage, protection behavior, and service usability across several power ratings.
+              </p>
+<ul class="highlights">
+<li>Updated the firmware across the product family instead of treating each model as an isolated unit.</li>
+<li>Kept model-specific behavior compatible with shared product features such as LCD display, event history, and supercapacitor state reporting.</li>
+<li>Aligned the firmware behavior with practical installation and bypass requirements used in the field.</li>
+<li>Maintained tracking of updated firmware versions so production and service work used the right release.</li>
+</ul>
+</article>
+<article class="card" data-reveal="">
+<h3>Current-controller tuning by product rating</h3>
+<p>
+                Each product rating required controller tuning that matched its hardware dynamics and current
+                response. A single tuning set would not give clean behavior across the full range.
+              </p>
+<ul class="highlights">
+<li>Tuned current-controller behavior separately for the relevant product ratings.</li>
+<li>Reduced overshoot during fast sag compensation and load-support transitions.</li>
+<li>Improved practical response quality while keeping the control behavior robust for field products.</li>
+</ul>
+</article>
+</div>
+<div class="grid-2 section-tight">
+<article class="card" data-reveal="">
+<h3>Sag response and supercapacitor state handling</h3>
+<p>
+                The product depends on stored supercapacitor energy to ride through voltage sags, so the firmware
+                needed to coordinate event response, residual-energy indication, and product-state feedback.
+              </p>
+<ul class="highlights">
+<li>Worked with firmware behavior connected to residual supercapacitor energy display.</li>
+<li>Supported sag-history storage so product events could be reviewed after operation.</li>
+<li>Handled the product logic around sag compensation, recovery, and customer-visible status.</li>
+</ul>
+</article>
+<article class="card" data-reveal="">
+<h3>Noise robustness and real product constraints</h3>
+<p>
+                Commercial DVC products operate in noisy industrial environments. The firmware and controller tuning
+                therefore had to work with practical filters, sensing noise, protection behavior, and product safety.
+              </p>
+<ul class="highlights">
+<li>Accounted for input/output noise-filter behavior and internal/external noise exposure.</li>
+<li>Tuned the control response with practical measurement and product constraints in mind.</li>
+<li>Connected firmware behavior to field usability, maintenance, and reliable compensation performance.</li>
+</ul>
+</article>
+</div>
+<div class="grid-2 section-tight">
+<article class="card" data-reveal="">
+<h3>Production firmware handoff</h3>
+<p>
+                After firmware updates were validated, I worked with the production team so the correct firmware
+                versions were installed on newly shipped products. This connected engineering changes to actual
+                production release control.
+              </p>
+<ul class="highlights">
+<li>Tracked firmware versions and product applicability across the D2 Series family.</li>
+<li>Collaborated with production engineers and technicians during firmware installation for newly shipped units.</li>
+<li>Helped keep production firmware aligned with the latest validated controller and product-feature updates.</li>
+</ul>
+</article>
+<article class="card" data-reveal="">
+<h3>Returned-product debugging</h3>
+<p>
+                I also supported products that returned from the field or production pipeline with reported problems.
+                That work required practical debugging across firmware behavior, controller response, hardware state,
+                and product-level symptoms.
+              </p>
+<ul class="highlights">
+<li>Debugged returned D2 Series products and identified firmware or control-related causes where applicable.</li>
+<li>Fixed issues found during returned-product analysis and folded lessons back into updated firmware behavior.</li>
+<li>Connected field feedback with firmware maintenance, controller tuning, and production support.</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container split-layout">
+<article class="card statement-card" data-reveal="">
+<span class="eyebrow">Why This Project Matters</span>
+<h2>Commercial firmware work under product constraints</h2>
+<p>
+              This project demonstrates a different part of my engineering experience: maintaining and improving an
+              existing commercial product family. The challenge was not only to make one controller work, but to
+              update the complete firmware behavior across several product ratings and tune each product so its
+              sag-compensation response was cleaner and more reliable.
+            </p>
+<p>
+              It strengthened my practical understanding of how current-loop tuning, sensing noise, product UI,
+              event history, protection behavior, supercapacitor state estimation, firmware release tracking,
+              production handoff, and returned-product debugging all interact in real industrial voltage-sag
+              compensation products.
+            </p>
+</article>
+<aside class="card details-card" data-reveal="">
+<span class="eyebrow">Project Tags</span>
+<div class="tag-row">
+<span class="tag">Firmware Modernization</span>
+<span class="tag">D2 Series</span>
+<span class="tag">Current Controller</span>
+<span class="tag">Overshoot Reduction</span>
+<span class="tag">Voltage Sag Compensation</span>
+<span class="tag">Supercapacitor DVC</span>
+</div>
+</aside>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<strong>Muhammad Noman Ashraf</strong>
+<p class="footer-copy">Industrial firmware project for D2 Series DVC products, current-controller tuning, and sag-response improvement.</p>
+</div>
+<div class="inline-links">
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+<a href="industrial-experience.html">Industrial Experience</a>
+<a href="about.html">About &amp; Contact</a>
+</div>
+<div class="small">© <span id="year"></span> Muhammad Noman Ashraf</div>
+</div>
+</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

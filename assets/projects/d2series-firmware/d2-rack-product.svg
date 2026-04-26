@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" role="img" aria-labelledby="title desc">
+  <title id="title">Rack-mount D2 series voltage sag compensator</title>
+  <desc id="desc">Product-style illustration of the rack-mount D2 dynamic voltage compensator cabinet with display and handles.</desc>
+  <defs>
+    <linearGradient id="top" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7f8f8"/>
+      <stop offset="1" stop-color="#dfe3e5"/>
+    </linearGradient>
+    <linearGradient id="front" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#f5f6f6"/>
+      <stop offset="1" stop-color="#e2e5e7"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-20%" width="130%" height="150%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#647077" flood-opacity=".22"/>
+    </filter>
+  </defs>
+  <rect width="720" height="420" fill="#f6f7f8"/>
+  <g filter="url(#shadow)" transform="translate(70 80)">
+    <polygon points="94 32 506 32 616 98 184 98" fill="url(#top)"/>
+    <polygon points="184 98 616 98 616 250 184 250" fill="#d7dcdf"/>
+    <polygon points="94 32 184 98 184 250 94 184" fill="#cfd5d8"/>
+    <rect x="78" y="84" width="456" height="176" rx="4" fill="url(#front)" stroke="#cbd2d6"/>
+    <rect x="48" y="112" width="42" height="112" rx="10" fill="#e6e9eb" stroke="#b9c1c6"/>
+    <rect x="532" y="112" width="42" height="112" rx="10" fill="#e6e9eb" stroke="#b9c1c6"/>
+    <rect x="150" y="140" width="92" height="54" rx="5" fill="#22282b"/>
+    <rect x="164" y="151" width="64" height="20" rx="2" fill="#204758"/>
+    <circle cx="164" cy="184" r="8" fill="#2f7dd1"/>
+    <circle cx="187" cy="184" r="8" fill="#42a85f"/>
+    <circle cx="210" cy="184" r="8" fill="#7b54bd"/>
+    <circle cx="233" cy="184" r="8" fill="#d23b3b"/>
+    <text x="326" y="172" fill="#2b2f31" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">DVC</text>
+    <text x="326" y="196" fill="#6d7478" font-family="Inter, Arial, sans-serif" font-size="14">D2 Series Sag Compensator</text>
+    <rect x="408" y="206" width="58" height="34" rx="3" fill="#f9fbfb" stroke="#c5cdd1"/>
+    <path d="M437 214l14 22h-28z" fill="#f4c345" stroke="#946a00"/>
+    <rect x="562" y="124" width="28" height="6" rx="3" fill="#c1c8cc"/>
+    <rect x="562" y="146" width="28" height="6" rx="3" fill="#c1c8cc"/>
+    <rect x="562" y="168" width="28" height="6" rx="3" fill="#c1c8cc"/>
+    <rect x="562" y="190" width="28" height="6" rx="3" fill="#c1c8cc"/>
+  </g>
+</svg>

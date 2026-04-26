@@ -20,7 +20,7 @@
 <header class="site-header">
 <div class="container nav-wrap">
 <a aria-label="Muhammad Noman Ashraf home" class="brand" href="index.html">
-<img alt="Muhammad Noman Ashraf" class="brand-avatar" src="Noman.jpg"/>
+<img alt="Muhammad Noman Ashraf" class="brand-avatar" src="assets/profile/Noman.jpg"/>
 <span class="brand-copy">
 <strong>Muhammad Noman Ashraf</strong>
 <span>PhD in Electrical Engineering</span>
@@ -46,7 +46,7 @@
 <span class="eyebrow">Projects</span>
 <h1>Selected engineering projects across academia and industry.</h1>
 <p class="lead">
-            This page highlights three core projects: my current BESS work at Khalifa University, transformerless DVC development at OKY, and inverter design during my MSc at Soongsil University.
+            This page highlights my current BESS work at Khalifa University, transformerless DVC development at OKY, D2 Series product firmware modernization, and inverter design during my MSc at Soongsil University.
           </p>
 </div>
 </section>
@@ -72,11 +72,11 @@
 </div>
 <div class="grid-2 image-showcase project-image-pair">
 <figure class="image-card card">
-<a href="uni_block.png" rel="noopener" target="_blank"><img alt="UNIGRID block diagram showing cabinet-level sodium-ion BESS integration architecture" src="uni_block.png"/></a>
+<a href="assets/projects/unigrid/uni_block.png" rel="noopener" target="_blank"><img alt="UNIGRID block diagram showing cabinet-level sodium-ion BESS integration architecture" src="assets/projects/unigrid/uni_block.png"/></a>
 <figcaption>System-level integration architecture for the current sodium-ion BESS project, reflecting the power-conversion and integration work I am leading.</figcaption>
 </figure>
 <figure class="image-card card">
-<a href="uni_bess.png" rel="noopener" target="_blank"><img alt="Rendered cabinet view for the UNIGRID sodium-ion battery energy storage system" src="uni_bess.png"/></a>
+<a href="assets/projects/unigrid/uni_bess.png" rel="noopener" target="_blank"><img alt="Rendered cabinet view for the UNIGRID sodium-ion battery energy storage system" src="assets/projects/unigrid/uni_bess.png"/></a>
 <figcaption>Cabinet-style BESS concept for the project where I am leading the power-electronics, grid-integration, and control-system work.</figcaption>
 </figure>
 </div>
@@ -110,11 +110,11 @@
 </div>
 <div class="grid-2 image-showcase project-image-pair">
 <figure class="image-card card">
-<a href="transless-topology.png" rel="noopener" target="_blank"><img alt="Transless DVC DC-DC topology showing interleaved boost and dual active bridge" src="transless-topology.png"/></a>
+<a href="assets/projects/transless-dvc/transless-topology.png" rel="noopener" target="_blank"><img alt="Transless DVC DC-DC topology showing interleaved boost and dual active bridge" src="assets/projects/transless-dvc/transless-topology.png"/></a>
 <figcaption>Two-stage DC-DC topology that I selected and developed to handle very high low-voltage current and high step-up gain.</figcaption>
 </figure>
 <figure class="image-card card">
-<a href="transless-dcdc-assembly.png" rel="noopener" target="_blank"><img alt="Assembled 10 kilowatt transless DC-DC converter board" src="transless-dcdc-assembly.png"/></a>
+<a href="assets/projects/transless-dvc/transless-dcdc-assembly.png" rel="noopener" target="_blank"><img alt="Assembled 10 kilowatt transless DC-DC converter board" src="assets/projects/transless-dvc/transless-dcdc-assembly.png"/></a>
 <figcaption>Assembled DC-DC hardware that I designed, including the module arrangement, gate-drive integration, and power-stage layout.</figcaption>
 </figure>
 </div>
@@ -130,6 +130,46 @@
 <a class="btn" href="Transless_DC-DC_Converter.pptx.pdf" rel="noopener" target="_blank">Open project deck</a>
 </div>
 </article>
+<article class="card project-feature project-case-study" data-reveal="">
+<p class="stack-label">Industrial Firmware Product Series</p>
+<h2>D2 Series single-phase DVC firmware modernization</h2>
+<p>
+              At OKY, I updated the firmware across a D2 Series single-phase dynamic voltage compensator product
+              family, with model-specific current-controller tuning and reduced overshoot during sag-compensation
+              response.
+            </p>
+<p>
+              The work covered product-series firmware consistency, LCD/status behavior, sag-history storage,
+              supercapacitor energy display, firmware-version tracking, production handoff, returned-product
+              debugging, and field-oriented DVC operation across multiple product ratings.
+            </p>
+<div class="metric-inline">
+<span><strong>Product family:</strong> D2 Series single-phase DVC</span>
+<span><strong>Range:</strong> 300 VA to 30 kVA product ratings</span>
+<span><strong>D2W type:</strong> wall-mount models from 300 VA to 3 kVA</span>
+<span><strong>Core work:</strong> firmware update, release tracking, current-loop tuning</span>
+</div>
+<div class="grid-2 image-showcase project-image-pair">
+<figure class="image-card research-figure-card card">
+<a href="assets/projects/d2series-firmware/d2-wall-product.svg" rel="noopener" target="_blank"><img alt="D2W wall-mount DVC product illustration" src="assets/projects/d2series-firmware/d2-wall-product.svg"/></a>
+<figcaption>Wall-mount D2W product form factor for the single-phase DVC family.</figcaption>
+</figure>
+<figure class="image-card card">
+<a href="assets/projects/transless-dvc/oky_dvc_testing_bed.jpg" rel="noopener" target="_blank"><img alt="DVC testing bed used for OKY controller tuning" src="assets/projects/transless-dvc/oky_dvc_testing_bed.jpg"/></a>
+<figcaption>OKY DVC testing bed used for compensation-response checks and controller tuning.</figcaption>
+</figure>
+</div>
+<ul class="highlights">
+<li>Updated the firmware for an existing commercial product family rather than a single prototype.</li>
+<li>Tuned current-controller behavior across products to reduce overshoot during fast DVC response.</li>
+<li>Supported product features including English LCD display, sag-history storage, residual supercapacitor energy display, and supercapacitor lifetime expectation.</li>
+<li>Tracked firmware versions, coordinated installation with the production team, and debugged products that returned with field or production issues.</li>
+<li>Worked within real product constraints involving noise filtering, bypass operation, installation behavior, and field reliability.</li>
+</ul>
+<div class="button-row">
+<a class="btn primary" href="project-d2series-firmware.html">Read full project page</a>
+</div>
+</article>
 <article class="card project-feature" data-reveal="">
 <p class="stack-label">MSc Project</p>
 <h2>5 kW inverter design during MSc at Soongsil University</h2>
@@ -139,15 +179,15 @@
             </p>
 <div class="grid-3 image-showcase project-image-pair" style="margin-bottom: 1.5rem;">
 <figure class="image-card card">
-<a href="1550907028853.jpg" rel="noopener" target="_blank"><img alt="Muhammad Noman Ashraf in the laboratory holding a thermal camera, wearing safety goggles, beside the MSc inverter test setup" src="1550907028853.jpg"/></a>
+<a href="assets/events/1550907028853.jpg" rel="noopener" target="_blank"><img alt="Muhammad Noman Ashraf in the laboratory holding a thermal camera, wearing safety goggles, beside the MSc inverter test setup" src="assets/events/1550907028853.jpg"/></a>
 <figcaption>Laboratory testing during my MSc work at Soongsil University, using a thermal camera during inverter-platform validation.</figcaption>
 </figure>
 <figure class="image-card card">
-<a href="msc_5kw_inverter_setup.jpg" rel="noopener" target="_blank"><img alt="5kW Grid Connected Inverter setup" src="msc_5kw_inverter_setup.jpg"/></a>
+<a href="assets/projects/msc-inverter/msc_5kw_inverter_setup.jpg" rel="noopener" target="_blank"><img alt="5kW Grid Connected Inverter setup" src="assets/projects/msc-inverter/msc_5kw_inverter_setup.jpg"/></a>
 <figcaption>5kW Grid Connected Inverter platform built during my master's research.</figcaption>
 </figure>
 <figure class="image-card card">
-<a href="msc_5kw_inverter_dcdc_testing.jpg" rel="noopener" target="_blank"><img alt="Testing 5kW inverter with DC-DC converter" src="msc_5kw_inverter_dcdc_testing.jpg"/></a>
+<a href="assets/projects/msc-inverter/msc_5kw_inverter_dcdc_testing.jpg" rel="noopener" target="_blank"><img alt="Testing 5kW inverter with DC-DC converter" src="assets/projects/msc-inverter/msc_5kw_inverter_dcdc_testing.jpg"/></a>
 <figcaption>Testing the 5kW inverter alongside the DC-DC converter stage in the lab.</figcaption>
 </figure>
 </div>
